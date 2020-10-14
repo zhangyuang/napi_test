@@ -1,6 +1,6 @@
 {
   "name": "napi-readfile-linux",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "os": ["linux"],
   "main": "napi-readfile.linux.node",
   "files": ["napi-readfile.linux.node"],
