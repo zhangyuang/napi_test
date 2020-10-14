@@ -1,6 +1,6 @@
 {
   "name": "napi-readfile-darwin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "os": ["darwin"],
   "main": "napi-readfile.darwin.node",
   "files": ["napi-readfile.darwin.node"],
