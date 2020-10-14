@@ -1,5 +1,5 @@
 {
-  "name": "@napi-rs/napi-readfile-linux",
+  "name": "napi-readfile-linux",
   "version": "0.1.0",
   "os": ["linux"],
   "main": "napi-readfile.linux.node",

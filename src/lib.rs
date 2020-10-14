@@ -1,9 +1,11 @@
-
 use std::convert::TryInto;
 use std::fs;
 
-use napi::{CallContext, Env, JsNumber, JsObject, Module, Result, Task, register_module, JsString};
-use napi_derive::{js_function};
+use napi::{
+  register_module, CallContext, Env, JsArrayBuffer, JsNumber, JsObject, JsString, Module, Result,
+  Task,
+};
+use napi_derive::js_function;
 
 #[cfg(all(unix, not(target_env = "musl")))]
 #[global_allocator]
@@ -39,6 +41,8 @@ fn init(module: &mut Module) -> Result<()> {
   module.create_named_method("sleep", sleep)?;
 
   module.create_named_method("readfile", read_file)?;
+
+  module.create_named_method("readfileReverse", read_file_reverse)?;
   Ok(())
 }
 
@@ -61,4 +65,14 @@ fn read_file(ctx: CallContext) -> Result<JsString> {
   let filename: String = ctx.get::<JsString>(0)?.try_into()?;
   let contents = fs::read_to_string(filename).expect("wrong");
   ctx.env.create_string(contents.as_str())
+}
+
+#[js_function(1)]
+fn read_file_reverse(ctx: CallContext) -> Result<JsString> {
+  let filename: String = ctx.get::<JsString>(0)?.try_into()?;
+  let contents = fs::read_to_string(filename).expect("wrong");
+  let mut main_vec:Vec<&str> = contents.split("").collect();
+  main_vec.reverse();
+  let main_vec_str = main_vec.join("");
+  ctx.env.create_string(main_vec_str.as_str())
 }

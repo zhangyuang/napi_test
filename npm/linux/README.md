@@ -1,3 +1,3 @@
-# `@napi-rs/napi-readfile-linux`
+# `napi-readfile-linux`
 
-This is the **linux** 64-bit binary for `@napi-rs/napi-readfile`
+This is the **linux** 64-bit binary for `napi-readfile`

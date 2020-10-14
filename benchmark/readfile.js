@@ -1,16 +1,17 @@
 const fs = require('fs')
 const path = require('path')
 const { Suite } = require('benchmark')
-const { readfile } = require('../napi-readfile.darwin.node')
+const { readfileReverse } = require('../napi-readfile.darwin.node')
 
 const suite = new Suite()
-const filePath = path.resolve(__dirname, './file.txt')
+const filePath = path.resolve(__dirname, '../index.js')
+
 suite
   .add('readfile by nodejs', () => {
-    fs.readFileSync(filePath)
+    fs.readFileSync(filePath).toString().split('').reverse().join('')
   })
   .add('readfile by napi', () => {
-    readfile(filePath)
+    readfileReverse(filePath)
   })
   .on('cycle', function (event) {
     //eslint-disable-next-line

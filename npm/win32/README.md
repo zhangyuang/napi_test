@@ -1,3 +1,3 @@
-# `@napi-rs/napi-readfile-win32`
+# `napi-readfile-win32`
 
-This is the **win32** 64-bit binary for `@napi-rs/napi-readfile`
+This is the **win32** 64-bit binary for `napi-readfile`
