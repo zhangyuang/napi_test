@@ -1,6 +1,6 @@
 {
   "name": "yuuang-napi-readfile",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "readFile with napi-rs",
   "main": "index.js",
   "repository": "git@github.com:zhangyuang/napi_test.git",

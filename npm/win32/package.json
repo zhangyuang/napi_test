@@ -1,6 +1,6 @@
 {
   "name": "@napi-rs/napi-readfile-win32",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "os": ["win32"],
   "main": "napi-readfile.win32.node",
   "files": ["napi-readfile.win32.node"],
